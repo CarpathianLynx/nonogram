@@ -1,0 +1,37 @@
+@import "colors.css";
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  width: 90vh;
+  height: 90vh;
+  background-color: var(--white);
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.cell {
+  flex-grow: 1;
+  border: #404040 1px solid;
+  --border: var(--black) 2px solid;
+}
+
+.row:nth-child(5n + 1) .cell {
+  border-top: var(--border);
+}
+
+.row:nth-child(5n) .cell {
+  border-bottom: var(--border);
+}
+
+.row .cell:nth-child(5n + 1) {
+  border-left: var(--border);
+}
+
+.row .cell:nth-child(5n) {
+  border-right: var(--border);
+}

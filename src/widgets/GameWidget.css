@@ -1,0 +1,19 @@
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer {
+  width: 10vh;
+  height: 10vh;
+}
+
+.board {
+  display: flex;
+  flex-direction: row;
+}
+
+.spacer-rows-constraints {
+  display: flex;
+  flex-direction: column;
+}

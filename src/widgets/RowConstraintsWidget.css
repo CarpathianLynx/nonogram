@@ -1,0 +1,22 @@
+.row-constraints {
+  height: 90vh;
+  width: 10vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.row-constraint-group {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+.row-constraint {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin: 2px;
+  border-radius: 10px;
+  justify-content: center;
+  text-align: center;
+}
