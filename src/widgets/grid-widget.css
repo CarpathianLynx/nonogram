@@ -15,6 +15,7 @@
 }
 
 .cell {
+  display: flex;
   flex-grow: 1;
   border: #404040 1px solid;
   --border: var(--black) 2px solid;

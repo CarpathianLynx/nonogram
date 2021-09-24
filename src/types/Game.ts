@@ -1,9 +1,10 @@
 import Grid from "./Grid";
-import FillOption from "./FillOption";
 import Constraint from "./Constraint";
+import Color from "./Color";
 
 export default interface Game {
   grid: Grid;
-  colors: FillOption[];
+  colors: Color[];
   rowsConstraints: Constraint[][];
+  colsConstraints: Constraint[][];
 }

@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import FillOption, { EMPTY } from "../types/FillOption";
-import "./FillPicker.css";
+import "./fill-picker.css";
 import X from "./X";
 import O from "./O";
 
 interface FillPickerProps {
   options: FillOption[];
+  onClickOption: (option: FillOption) => void;
+  currentOption: FillOption;
 }
+
 interface FillPickerOptionProps {
   option: FillOption;
   active: boolean;
@@ -31,14 +34,17 @@ const FillPickerOption: React.FC<FillPickerOptionProps> = ({
   );
 };
 
-const FillPicker: React.FC<FillPickerProps> = ({ options }) => {
-  const [currentColor, setCurrentColor] = useState(options[0]);
+const FillPicker: React.FC<FillPickerProps> = ({
+  options,
+  currentOption,
+  onClickOption,
+}) => {
   return (
     <div className={"color-picker"}>
       {options.map((option) => {
         const { value } = option;
-        const active = value === currentColor.value;
-        const onClick = () => setCurrentColor(option);
+        const active = value === currentOption.value;
+        const onClick = () => onClickOption(option);
         return (
           <FillPickerOption
             key={option.value}

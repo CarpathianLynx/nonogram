@@ -1,30 +1,35 @@
 import Grid from "../types/Grid";
 import React from "react";
-import "./GridWidget.css";
+import "./grid-widget.css";
 import Cell from "../types/Cell";
+import { EMPTY } from "../types/FillOption";
+import X from "./X";
 
 interface GridProps {
   grid: Grid;
+  onClickCell: (cell: Cell) => void;
 }
 
-interface CellProps {
-  cell: Cell;
-}
+const GridWidget: React.FC<GridProps> = ({ grid, onClickCell }) => {
+  console.log("bau", grid.cells[0][4]);
 
-const CellWidget: React.FC<CellProps> = ({ cell }) => {
-  const { row, col, color } = cell;
-  return <div key={`cell-${row}-${col}`} className={`cell ${color}`} />;
-};
-
-const GridWidget: React.FC<GridProps> = ({ grid }) => {
   return (
     <div className={"grid"}>
       {grid.cells.map((row, rowIndex) => {
         return (
           <div key={`row-${rowIndex}`} className={"row"}>
-            {row.map((cell) => (
-              <CellWidget key={`cell-${cell.row}-${cell.col}`} cell={cell} />
-            ))}
+            {row.map((cell) => {
+              const { row, col, color } = cell;
+              return (
+                <div
+                  key={`cell-${row}-${col}`}
+                  className={`cell ${color}`}
+                  onClick={() => onClickCell(cell)}
+                >
+                  {color === EMPTY ? <X /> : null}
+                </div>
+              );
+            })}
           </div>
         );
       })}

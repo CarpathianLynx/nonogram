@@ -1,25 +1,23 @@
 import React from "react";
 import Constraint from "../types/Constraint";
-import "./ColConstraintsWidget.css";
+import "./col-constraints-widget.css";
+import ConstraintsWidget from "./ConstraintsWidget";
 
-interface RowConstraintsProps {
+interface ColConstraintsProps {
   constraints: Constraint[][];
 }
 
-const ColConstraintsWidget: React.FC<RowConstraintsProps> = ({
+const extraClasses = {
+  container: "col-constraints",
+  group: "col-constraint-group",
+  constraint: "col-constraint",
+};
+
+const ColConstraintsWidget: React.FC<ColConstraintsProps> = ({
   constraints,
 }) => {
   return (
-    <div className={"col-constraints"}>
-      {constraints.map((constraintGroup) => (
-        <div className={"col-constraint-group"}>
-          {constraintGroup.map((constraint) => {
-            const { color, count } = constraint;
-            return <div className={`col-constraint ${color}`}>{count}</div>;
-          })}
-        </div>
-      ))}
-    </div>
+    <ConstraintsWidget constraints={constraints} extraClasses={extraClasses} />
   );
 };
 

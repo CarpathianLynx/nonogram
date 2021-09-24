@@ -1,10 +1,9 @@
 import React from "react";
-import GridWidget from "./GridWidget";
-import "./GameWidget.css";
-import FillPicker from "./FillPicker";
-import { EMPTY_OPTION } from "../types/FillOption";
+import "./game-widget.css";
 import Game from "../types/Game";
 import RowConstraintsWidget from "./RowConstraintsWidget";
+import FillPickerContainer from "../containers/FillPickerContainer";
+import GridContainer from "../containers/GridContainer";
 import ColConstraintsWidget from "./ColConstraintsWidget";
 
 interface GameProps {
@@ -12,8 +11,7 @@ interface GameProps {
 }
 
 const GameWidget: React.FC<GameProps> = ({ game }) => {
-  const { grid, colors, rowsConstraints } = game;
-  const actualColors = [EMPTY_OPTION, ...colors];
+  const { rowsConstraints, colsConstraints } = game;
   return (
     <div className={"game"}>
       <div className={"board"}>
@@ -22,11 +20,11 @@ const GameWidget: React.FC<GameProps> = ({ game }) => {
           <RowConstraintsWidget constraints={rowsConstraints} />
         </div>
         <div className={"col-constraints-grid"}>
-          <ColConstraintsWidget constraints={rowsConstraints} />
-          <GridWidget grid={grid} />
+          <ColConstraintsWidget constraints={colsConstraints} />
+          <GridContainer />
         </div>
       </div>
-      <FillPicker options={actualColors} />
+      <FillPickerContainer />
     </div>
   );
 };
