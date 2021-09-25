@@ -1,10 +1,10 @@
 import Color from "./Color";
 
-export const EMPTY = "EMPTY";
+export const EMPTY: Color = "EMPTY";
 
 export const EMPTY_OPTION = {
   value: EMPTY,
-  completed: false,
+  completed: false
 };
 
 export type EmptyOption = typeof EMPTY_OPTION;

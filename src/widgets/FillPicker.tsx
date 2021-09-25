@@ -19,7 +19,7 @@ interface FillPickerOptionProps {
 const FillPickerOption: React.FC<FillPickerOptionProps> = ({
   option,
   active,
-  onClick,
+  onClick
 }) => {
   const { value } = option;
 
@@ -37,7 +37,7 @@ const FillPickerOption: React.FC<FillPickerOptionProps> = ({
 const FillPicker: React.FC<FillPickerProps> = ({
   options,
   currentOption,
-  onClickOption,
+  onClickOption
 }) => {
   return (
     <div className={"color-picker"}>

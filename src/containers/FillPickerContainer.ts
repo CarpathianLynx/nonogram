@@ -8,13 +8,13 @@ const mapStateToProps = (state: State) => {
   const { currentOption, options } = state.currentGame;
   return {
     currentOption: currentOption!!,
-    options: options!!,
+    options: options!!
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onClickOption: (option: FillOption) => dispatch(setFillOption(option)),
+    onClickOption: (option: FillOption) => dispatch(setFillOption(option))
   };
 };
 
