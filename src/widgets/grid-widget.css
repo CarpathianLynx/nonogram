@@ -2,35 +2,35 @@
 @import "constants.css";
 
 .grid {
-  display: flex;
-  flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .row {
-  display: flex;
-  flex-direction: row;
-  height: var(--cell-size);
+	display: flex;
+	flex-direction: row;
+	height: var(--cell-size);
 }
 
 .cell {
-  display: flex;
-  width: var(--cell-size);
-  border: #404040 1px solid;
-  --border: var(--black) 2px solid;
+	display: flex;
+	width: var(--cell-size);
+	border: #404040 1px solid;
+	--border: var(--black) 2px solid;
 }
 
 .row:nth-child(5n + 1) .cell {
-  border-top: var(--border);
+	border-top: var(--border);
 }
 
 .row:nth-child(5n) .cell {
-  border-bottom: var(--border);
+	border-bottom: var(--border);
 }
 
 .row .cell:nth-child(5n + 1) {
-  border-left: var(--border);
+	border-left: var(--border);
 }
 
 .row .cell:nth-child(5n) {
-  border-right: var(--border);
+	border-right: var(--border);
 }

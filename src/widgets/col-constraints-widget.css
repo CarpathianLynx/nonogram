@@ -1,24 +1,24 @@
 @import "constants.css";
 
 .col-constraints {
-  height: var(--spacer-size);
-  display: flex;
-  flex-direction: row;
+	height: var(--spacer-size);
+	display: flex;
+	flex-direction: row;
 }
 
 .col-constraint-group {
-  width: var(--cell-size);
-  display: flex;
-  flex-direction: column;
-  margin: 1.2px;
+	width: var(--cell-size);
+	display: flex;
+	flex-direction: column;
+	margin: 1.2px;
 }
 
 .col-constraint {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 1.5px;
-  border-radius: 10px;
-  justify-content: center;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: 1.5px;
+	border-radius: 10px;
+	justify-content: center;
+	text-align: center;
 }

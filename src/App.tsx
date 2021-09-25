@@ -11,13 +11,13 @@ store.dispatch(setGame(game));
 store.dispatch(setFillOption(EMPTY_OPTION));
 
 function App() {
-  return (
-    <Provider store={store}>
-      <div className={"wrapper"}>
-        <GameWidget />
-      </div>
-    </Provider>
-  );
+	return (
+		<Provider store={store}>
+			<div className={"wrapper"}>
+				<GameWidget />
+			</div>
+		</Provider>
+	);
 }
 
 export default App;

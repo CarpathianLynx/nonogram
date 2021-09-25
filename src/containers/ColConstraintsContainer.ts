@@ -3,17 +3,17 @@ import State from "../redux/State";
 import ColConstraintsWidget from "../widgets/ColConstraintsWidget";
 
 const mapStateToProps = (state: State) => {
-  const { colsConstraints } = state.currentGame.game!!;
-  return {
-    constraints: colsConstraints
-  };
+	const { colsConstraints } = state.currentGame.game!!;
+	return {
+		constraints: colsConstraints
+	};
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+	return {};
 };
 
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+	mapStateToProps,
+	mapDispatchToProps
 )(ColConstraintsWidget);

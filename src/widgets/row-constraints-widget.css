@@ -1,23 +1,23 @@
 @import "constants.css";
 
 .row-constraints {
-  width: var(--spacer-size);
-  display: flex;
-  flex-direction: column;
+	width: var(--spacer-size);
+	display: flex;
+	flex-direction: column;
 }
 
 .row-constraint-group {
-  height: var(--cell-size);
-  display: flex;
-  flex-direction: row;
+	height: var(--cell-size);
+	display: flex;
+	flex-direction: row;
 }
 
 .row-constraint {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  margin: 2px;
-  border-radius: 10px;
-  justify-content: center;
-  text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	margin: 2px;
+	border-radius: 10px;
+	justify-content: center;
+	text-align: center;
 }

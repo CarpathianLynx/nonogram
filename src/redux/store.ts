@@ -5,10 +5,10 @@ import reducer from "./currentGame/reducer";
 import State from "./State";
 
 const store = createStore<State, any, any, any>(
-  combineReducers({
-    currentGame: reducer
-  }),
-  applyMiddleware(logger, thunk)
+	combineReducers({
+		currentGame: reducer
+	}),
+	applyMiddleware(logger, thunk)
 );
 
 export default store;

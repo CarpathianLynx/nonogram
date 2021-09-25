@@ -6,28 +6,28 @@ import GridWidget from "../widgets/GridWidget";
 import { fillGlideCell } from "../redux/currentGame/thunks";
 
 const mapStateToProps = (state: State) => {
-  const { grid } = state.currentGame.game!!;
-  return {
-    grid
-  };
+	const { grid } = state.currentGame.game!!;
+	return {
+		grid
+	};
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    onMouseDown: ({ row, col }: Cell) => {
-      dispatch(setFilling(true));
-      dispatch(fillCell(row, col));
-    },
-    onMouseUp: () => {
-      dispatch(setFilling(false));
-    },
-    onMouseEnter: ({ row, col }: Cell) => {
-      dispatch(fillGlideCell(row, col));
-    },
-    onMouseLeave: () => {
-      dispatch(setFilling(false));
-    }
-  };
+	return {
+		onMouseDown: ({ row, col }: Cell) => {
+			dispatch(setFilling(true));
+			dispatch(fillCell(row, col));
+		},
+		onMouseUp: () => {
+			dispatch(setFilling(false));
+		},
+		onMouseEnter: ({ row, col }: Cell) => {
+			dispatch(fillGlideCell(row, col));
+		},
+		onMouseLeave: () => {
+			dispatch(setFilling(false));
+		}
+	};
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(GridWidget);
