@@ -4,17 +4,25 @@ import "./grid-widget.css";
 import Cell from "../types/Cell";
 import { EMPTY } from "../types/FillOption";
 import X from "./X";
+import classes from "./classes";
 
 interface GridProps {
   grid: Grid;
-  onClickCell: (cell: Cell) => void;
+  onMouseDown: (cell: Cell) => void;
+  onMouseUp: () => void;
+  onMouseEnter: (cell: Cell) => void;
+  onMouseLeave: () => void;
 }
 
-const GridWidget: React.FC<GridProps> = ({ grid, onClickCell }) => {
-  console.log("bau", grid.cells[0][4]);
-
+const GridWidget: React.FC<GridProps> = ({
+  grid,
+  onMouseDown,
+  onMouseUp,
+  onMouseEnter,
+  onMouseLeave
+}) => {
   return (
-    <div className={"grid"}>
+    <div className={"grid"} onMouseLeave={onMouseLeave}>
       {grid.cells.map((row, rowIndex) => {
         return (
           <div key={`row-${rowIndex}`} className={"row"}>
@@ -23,8 +31,10 @@ const GridWidget: React.FC<GridProps> = ({ grid, onClickCell }) => {
               return (
                 <div
                   key={`cell-${row}-${col}`}
-                  className={`cell ${color}`}
-                  onClick={() => onClickCell(cell)}
+                  className={classes("cell", color)}
+                  onMouseDown={() => onMouseDown(cell)}
+                  onMouseUp={() => onMouseUp()}
+                  onMouseEnter={() => onMouseEnter(cell)}
                 >
                   {color === EMPTY ? <X /> : null}
                 </div>

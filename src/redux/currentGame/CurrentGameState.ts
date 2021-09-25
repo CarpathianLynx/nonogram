@@ -5,4 +5,5 @@ export default interface CurrentGameState {
   game?: Game;
   currentOption?: FillOption;
   options?: FillOption[];
+  isFilling: boolean;
 }
