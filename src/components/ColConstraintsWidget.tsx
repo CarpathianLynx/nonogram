@@ -1,4 +1,4 @@
-import "./col-constraints-widget.css";
+import "./styles/col-constraints-widget.css";
 import ConstraintsWidget, { ConstraintsProps } from "./ConstraintsWidget";
 import withExtraClasses from "./WithExtraClasses";
 

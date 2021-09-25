@@ -1,6 +1,6 @@
 import Grid from "../types/Grid";
 import React from "react";
-import "./grid-widget.css";
+import "./styles/grid-widget.css";
 import Cell from "../types/Cell";
 import { EMPTY } from "../types/FillOption";
 import X from "./X";

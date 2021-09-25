@@ -1,6 +1,6 @@
 import React from "react";
 import FillOption, { EMPTY } from "../types/FillOption";
-import "./fill-picker.css";
+import "./styles/fill-picker.css";
 import X from "./X";
 import O from "./O";
 

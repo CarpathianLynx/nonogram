@@ -1,5 +1,5 @@
 import React from "react";
-import "./game-widget.css";
+import "./styles/game-widget.css";
 import FillPickerContainer from "./FillPickerContainer";
 import RowConstraintsContainer from "./RowConstraintsContainer";
 import ColConstraintsContainer from "./ColConstraintsContainer";

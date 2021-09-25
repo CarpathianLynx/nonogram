@@ -1,7 +1,7 @@
 import React from "react";
 import Constraint from "../types/Constraint";
 import classes from "./classes";
-import "./constraints-widget.css";
+import "./styles/constraints-widget.css";
 
 export interface ConstraintsProps {
 	constraints: Constraint[][];
