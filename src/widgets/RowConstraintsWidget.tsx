@@ -1,24 +1,13 @@
-import React from "react";
-import Constraint from "../types/Constraint";
 import "./row-constraints-widget.css";
-import ConstraintsWidget from "./ConstraintsWidget";
-
-interface RowConstraintsProps {
-  constraints: Constraint[][];
-}
+import ConstraintsWidget, { ConstraintsProps } from "./ConstraintsWidget";
+import withExtraClasses from "./WithExtraClasses";
 
 const extraClasses = {
   container: "row-constraints",
   group: "row-constraint-group",
-  constraint: "row-constraint",
+  constraint: "row-constraint"
 };
 
-const RowConstraintsWidget: React.FC<RowConstraintsProps> = ({
-  constraints,
-}) => {
-  return (
-    <ConstraintsWidget constraints={constraints} extraClasses={extraClasses} />
-  );
-};
-
-export default RowConstraintsWidget;
+export default withExtraClasses<ConstraintsProps>(extraClasses)(
+  ConstraintsWidget
+);
