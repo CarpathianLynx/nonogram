@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import GameWidget from "./widgets/GameWidget";
+import GameWidget from "./components/GameWidget";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import { setFillOption, setGame } from "./redux/currentGame/actions";

@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import { fillCell, setFilling } from "../redux/currentGame/actions";
 import State from "../redux/State";
 import Cell from "../types/Cell";
-import GridWidget from "../widgets/GridWidget";
+import GridWidget from "./GridWidget";
 import { fillGlideCell } from "../redux/currentGame/thunks";
 
 const mapStateToProps = (state: State) => {

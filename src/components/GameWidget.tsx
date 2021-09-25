@@ -1,9 +1,9 @@
 import React from "react";
 import "./game-widget.css";
-import FillPickerContainer from "../containers/FillPickerContainer";
-import RowConstraintsContainer from "../containers/RowConstraintsContainer";
-import ColConstraintsContainer from "../containers/ColConstraintsContainer";
-import GridContainer from "../containers/GridContainer";
+import FillPickerContainer from "./FillPickerContainer";
+import RowConstraintsContainer from "./RowConstraintsContainer";
+import ColConstraintsContainer from "./ColConstraintsContainer";
+import GridContainer from "./GridContainer";
 
 interface GameProps {}
 

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import State from "../redux/State";
-import ColConstraintsWidget from "../widgets/ColConstraintsWidget";
+import ColConstraintsWidget from "./ColConstraintsWidget";
 
 const mapStateToProps = (state: State) => {
 	const { colsConstraints } = state.currentGame.game!!;

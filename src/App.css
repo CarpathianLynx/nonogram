@@ -1,4 +1,4 @@
-@import "widgets/colors.css";
+@import "components/colors.css";
 
 .wrapper {
 	transform: translate(-50%, -50%);
