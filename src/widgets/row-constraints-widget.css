@@ -1,14 +1,15 @@
+@import "constants.css";
+
 .row-constraints {
-  height: 90vh;
-  width: 10vh;
+  width: var(--spacer-size);
   display: flex;
   flex-direction: column;
 }
 
 .row-constraint-group {
+  height: var(--cell-size);
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
 }
 
 .row-constraint {

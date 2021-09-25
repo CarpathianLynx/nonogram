@@ -1,27 +1,79 @@
 :root {
   --white: #f6f6f6;
-  --black: black;
-  --grey: #404040;
-  --red: red;
+  --brown: saddlebrown;
+  --orange: orange;
   --blue: dodgerblue;
+  --black: #202020;
+  --grey: lightslategray;
+  --green: forestgreen;
+  --mustard: #899500;
+  --lightBlue: lightBlue;
+  --darkblue: darkblue;
+  --yellow: yellow;
+  --burgundy: #990a59;
+  --pink: pink;
 }
 
-.white {
-  background-color: var(--white);
+.burlywood {
+  background-color: burlywood;
 }
 
-.black {
-  background-color: var(--black);
+.gold {
+  background-color: gold;
 }
 
-.grey {
-  background-color: var(--grey);
-}
-
-.red {
-  background-color: var(--red);
+.orange {
+  background-color: var(--orange);
 }
 
 .blue {
   background-color: var(--blue);
+  color: var(--white);
+}
+
+.grey {
+  background-color: var(--grey);
+  color: var(--white);
+}
+
+.brown {
+  background-color: var(--brown);
+  color: var(--white);
+}
+
+.green {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.mustard {
+  background-color: var(--mustard);
+  color: var(--black);
+}
+
+.cherry {
+  background-color: #c70e73;
+  color: var(--white);
+}
+
+.lightBlue {
+  background-color: var(--lightBlue);
+}
+
+.darkBlue {
+  background-color: var(--darkblue);
+  color: var(--white);
+}
+
+.yellow {
+  background-color: var(--yellow);
+}
+
+.burgundy {
+  background-color: var(--burgundy);
+  color: var(--white);
+}
+
+.pink {
+  background-color: var(--pink);
 }
