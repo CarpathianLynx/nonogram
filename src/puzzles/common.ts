@@ -3,9 +3,11 @@ import Game from "../types/Game";
 import Grid from "../types/Grid";
 import Color from "../types/Color";
 
+let id = 0;
 export function constraint(color: string) {
 	return function (count: number): Constraint {
 		return {
+			id: id++,
 			color,
 			count,
 			completed: false

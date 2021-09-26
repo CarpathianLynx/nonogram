@@ -5,13 +5,18 @@
 	--blue: dodgerblue;
 	--black: #202020;
 	--grey: lightslategray;
+	--lightGrey: #aaaaaa;
 	--green: forestgreen;
 	--mustard: #899500;
 	--lightBlue: lightBlue;
-	--darkblue: darkblue;
+	--darkBlue: darkblue;
 	--yellow: yellow;
 	--burgundy: #990a59;
 	--pink: pink;
+	--cherry: #c70e73;
+	--gold: goldenrod;
+	font-size: medium;
+	font-weight: bold;
 }
 
 .burlywood {
@@ -19,7 +24,8 @@
 }
 
 .gold {
-	background-color: gold;
+	background-color: var(--gold);
+	color: var(--white);
 }
 
 .orange {
@@ -52,7 +58,7 @@
 }
 
 .cherry {
-	background-color: #c70e73;
+	background-color: var(--cherry);
 	color: var(--white);
 }
 
@@ -61,7 +67,7 @@
 }
 
 .darkBlue {
-	background-color: var(--darkblue);
+	background-color: var(--darkBlue);
 	color: var(--white);
 }
 
@@ -76,4 +82,14 @@
 
 .pink {
 	background-color: var(--pink);
+}
+
+.black {
+	background-color: var(--black);
+	color: var(--white);
+}
+
+.lightGrey {
+	background-color: var(--lightGrey);
+	color: var(--white);
 }

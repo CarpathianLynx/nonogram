@@ -12,3 +12,6 @@ export const green = constraint("green");
 export const mustard = constraint("mustard");
 export const cherry = constraint("cherry");
 export const pink = constraint("pink");
+export const gold = constraint("gold");
+export const black = constraint("black");
+export const lightGrey = constraint("lightGrey");

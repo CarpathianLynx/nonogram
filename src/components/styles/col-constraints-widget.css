@@ -10,14 +10,13 @@
 	width: var(--cell-size);
 	display: flex;
 	flex-direction: column;
-	margin: 1.2px;
 }
 
 .col-constraint {
 	display: flex;
 	flex-direction: column;
 	flex-grow: 1;
-	margin: 1.5px;
+	margin: 2px;
 	border-radius: 10px;
 	justify-content: center;
 	text-align: center;

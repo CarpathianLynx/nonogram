@@ -1,7 +1,7 @@
 import { lightBlue, yellow, darkBlue, burgundy, pink } from "./colors";
 import { createGame } from "./common";
 
-export const rowsConstraints = [
+const rowsConstraints = [
 	[burgundy(6)],
 	[lightBlue(5), burgundy(3)],
 	[lightBlue(1), yellow(5), lightBlue(1), burgundy(2)],
@@ -33,7 +33,7 @@ export const rowsConstraints = [
 	[yellow(2), darkBlue(1), darkBlue(4), darkBlue(1)]
 ];
 
-export const colsConstraints = [
+const colsConstraints = [
 	[yellow(1)],
 	[lightBlue(9), yellow(2)],
 	[lightBlue(10), yellow(2)],
@@ -62,7 +62,8 @@ const game = createGame(rowsConstraints, colsConstraints, [
 	"burgundy",
 	"yellow",
 	"darkBlue",
-	"lightBlue"
+	"lightBlue",
+	"pink"
 ]);
 
 export default game;

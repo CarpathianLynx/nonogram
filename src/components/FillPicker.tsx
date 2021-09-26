@@ -3,6 +3,7 @@ import FillOption, { EMPTY } from "../types/FillOption";
 import "./styles/fill-picker.css";
 import X from "./X";
 import O from "./O";
+import classes from "./classes";
 
 interface FillPickerProps {
 	options: FillOption[];
@@ -21,13 +22,17 @@ const FillPickerOption: React.FC<FillPickerOptionProps> = ({
 	active,
 	onClick
 }) => {
-	const { value } = option;
-
-	const className = `color-fill ${active ? "color-fill-active" : ""}`;
+	const { value, completed } = option;
 
 	return (
 		<div className={`color-button`} onClick={onClick}>
-			<div className={className} style={{ color: `var(--${value})` }}>
+			<div
+				className={classes("color-fill", {
+					"color-fill-active": active,
+					completed
+				})}
+				style={{ color: `var(--${value})` }}
+			>
 				{value === EMPTY ? <X padding={5} /> : <O padding={5} />}
 			</div>
 		</div>

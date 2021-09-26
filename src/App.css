@@ -4,3 +4,7 @@
 	top: 50%;
 	position: absolute;
 }
+
+:root {
+	user-select: none;
+}

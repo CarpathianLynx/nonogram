@@ -1,18 +1,26 @@
-import { FILL_CELL, SET_FILL_OPTION, SET_FILLING, SET_GAME } from "./actions";
+import {
+	SET_CELL_COLOR,
+	SET_CONSTRAINT_COMPLETE,
+	SET_FILL_OPTION,
+	SET_FILLING,
+	SET_GAME
+} from "./actions";
 import CurrentGameState from "./CurrentGameState";
-import FillOption, { EMPTY, EMPTY_OPTION } from "../../types/FillOption";
+import FillOption, { EMPTY_OPTION } from "../../types/FillOption";
 import Game from "../../types/Game";
-import Constraint from "../../types/Constraint";
-import Cell from "../../types/Cell";
-import { getCol, getRow } from "../../puzzles/common";
+import { setColor } from "../../types/Cell";
+import Color from "../../types/Color";
+import { setCompleted } from "../../types/Constraint";
 
 interface Action {
+	id: number;
 	game: Game;
 	option: FillOption;
 	type: string;
 	isFilling: boolean;
 	row: number;
 	col: number;
+	color: Color;
 }
 
 function setFilling(state: CurrentGameState, { isFilling }: Action): void {
@@ -31,52 +39,25 @@ function setFillOption(state: CurrentGameState, { option }: Action): void {
 	state.currentOption = option;
 }
 
-function reverse(array: any[]) {
-	return [...array].reverse();
-}
-
-function fillCell(
+function setCellColor(
 	{ game, currentOption }: CurrentGameState,
-	{ row, col }: Action
+	{ row, col, color }: Action
 ): void {
-	const { grid, rowsConstraints, colsConstraints } = game!!;
+	const { grid } = game!!;
 	const { cells } = grid;
-	const cell = cells[row][col];
-	cell.color = currentOption!!.value;
-	checkConstraints(rowsConstraints[row], getRow(grid, row));
-	checkConstraints(reverse(rowsConstraints[row]), reverse(getRow(grid, row)));
-
-	checkConstraints(colsConstraints[col], getCol(grid, col));
-	checkConstraints(reverse(colsConstraints[col]), reverse(getCol(grid, col)));
+	setColor(cells[row][col], color);
 }
 
-function checkConstraints(constraints: Constraint[], cells: Cell[]) {
-	let cellIndex = 0;
-	let count = 0;
-	for (
-		let constraintIndex = 0;
-		constraintIndex < constraints.length;
-		constraintIndex++
-	) {
-		while (cells[cellIndex].color === EMPTY) {
-			cellIndex++;
-		}
-
-		if (constraints[constraintIndex].completed) {
-			cellIndex += constraints[constraintIndex].count;
-			continue;
-		}
-
-		while (cells[cellIndex].color === constraints[constraintIndex].color) {
-			cellIndex++;
-			count++;
-		}
-
-		if (count === constraints[constraintIndex].count) {
-			constraints[constraintIndex].completed = true;
-			count = 0;
-		} else {
-			break;
+function setConstraintComplete(
+	{ game }: CurrentGameState,
+	{ id, completed }
+): void {
+	const { rowsConstraints, colsConstraints } = game!!;
+	for (const constraints of [...rowsConstraints, ...colsConstraints]) {
+		for (const constraint of constraints) {
+			if (constraint.id === id) {
+				setCompleted(constraint, completed);
+			}
 		}
 	}
 }
@@ -85,7 +66,8 @@ const reducers = {
 	[SET_FILLING]: setFilling,
 	[SET_GAME]: setGame,
 	[SET_FILL_OPTION]: setFillOption,
-	[FILL_CELL]: fillCell
+	[SET_CELL_COLOR]: setCellColor,
+	[SET_CONSTRAINT_COMPLETE]: setConstraintComplete
 };
 
 export default function reducer(
@@ -100,6 +82,6 @@ export default function reducer(
 	}
 }
 
-function clone(obj) {
+function clone<T>(obj: T): T {
 	return JSON.parse(JSON.stringify(obj));
 }

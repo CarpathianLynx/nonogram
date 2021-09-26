@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import { fillCell, setFilling } from "../redux/currentGame/actions";
+import { setFilling } from "../redux/currentGame/actions";
 import State from "../redux/State";
 import Cell from "../types/Cell";
 import GridWidget from "./GridWidget";
-import { fillGlideCell } from "../redux/currentGame/thunks";
+import { clickFillCell, glideFillCell } from "../redux/currentGame/thunks";
 
 const mapStateToProps = (state: State) => {
 	const { grid } = state.currentGame.game!!;
@@ -16,13 +16,13 @@ const mapDispatchToProps = (dispatch) => {
 	return {
 		onMouseDown: ({ row, col }: Cell) => {
 			dispatch(setFilling(true));
-			dispatch(fillCell(row, col));
+			dispatch(clickFillCell(row, col));
 		},
 		onMouseUp: () => {
 			dispatch(setFilling(false));
 		},
 		onMouseEnter: ({ row, col }: Cell) => {
-			dispatch(fillGlideCell(row, col));
+			dispatch(glideFillCell(row, col));
 		},
 		onMouseLeave: () => {
 			dispatch(setFilling(false));

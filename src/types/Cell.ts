@@ -5,3 +5,7 @@ export default interface Cell {
 	row: number;
 	col: number;
 }
+
+export function setColor(cell: Cell, color: Color) {
+	cell.color = color;
+}
