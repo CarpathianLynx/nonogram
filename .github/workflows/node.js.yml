@@ -15,4 +15,4 @@ jobs:
         node-version: 14.x
         cache: 'npm'
     - run: npm install --silent --no-audit
-    - run: npm run deploy
+    - run: npm run build
